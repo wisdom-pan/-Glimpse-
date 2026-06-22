@@ -165,6 +165,16 @@ class MainActivity : AppCompatActivity(), MainFragmentManager.FragmentLifecycleL
             true
         }
 
+        menu.findItem(R.id.action_archive_mate)?.setOnMenuItemClickListener {
+            startActivity(
+                android.content.Intent(
+                    this@MainActivity,
+                    com.alibaba.mnnllm.android.archive.ArchiveActivity::class.java
+                )
+            )
+            true
+        }
+
         val starGithub = menu.findItem(R.id.action_star_project)
         starGithub.setOnMenuItemClickListener { 
             onStarProject(null)
@@ -526,6 +536,12 @@ class MainActivity : AppCompatActivity(), MainFragmentManager.FragmentLifecycleL
                 }
             }
         }
+    }
+
+    fun openArchiveMate(view: View?) {
+        startActivity(
+            android.content.Intent(this, com.alibaba.mnnllm.android.archive.ArchiveActivity::class.java)
+        )
     }
 
     fun addLocalModels(view: View?) {

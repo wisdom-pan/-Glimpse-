@@ -73,6 +73,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_orientation="portrait"
+                app:label_text="本地归档小助手"
+                app:fab_icon="@drawable/ic_model"
+                android:onClick="openArchiveMate"/>
+            <com.nambimobile.widgets.efab.FabOption
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_orientation="portrait"
                 app:label_text="@string/star_project"
                 app:fab_icon="@drawable/ic_github"
                 android:onClick="onStarProject"/>
