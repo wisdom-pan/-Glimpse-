@@ -35,6 +35,9 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
         video/byte_buffer_decoder.cpp
         video/image_utils.cpp
         video/video_processor.cpp
+        # PP-OCRv6 OCR engine (detection + recognition)
+        ocr/ocr_engine.cpp
+        ocr/ocr_jni.cpp
 )
 
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE GIT_COMMIT_ID="${GIT_COMMIT_ID_VALUE}")
@@ -61,6 +64,9 @@ include_directories("${MNN_SOURCE_ROOT}/transformers/diffusion/engine/include/")
 #llm
 include_directories("${MNN_SOURCE_ROOT}/transformers/llm/engine/include")
 #include_directories("${CMAKE_SOURCE_DIR}/include")
+
+#opencv (MNN CV) for OCR pipeline
+include_directories("${MNN_SOURCE_ROOT}/tools/cv/include")
 
 #audio
 include_directories("${MNN_SOURCE_ROOT}/tools/audio/include")
